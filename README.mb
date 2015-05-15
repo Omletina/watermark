@@ -1,0 +1,12 @@
+<h2>Генератор водяных знаков</h2>
+
+<h3><i>Установка</i></h3>
+<ul>
+   <li>Клонировать репозиторий<br/><br/><code>git clone https://github.com/Omletina/watermark.git</code></li>
+   <br/>
+   <li>Выполнить установку необходимых npm-пакетов<br/><br/><code>npm i</code><br/></li>
+   <br/>
+   <li>Выполнить установку компонентов<br/><br/><code>bower i</code><br/></li>
+   <br/>
+   <li>Запустить веб сервер<br/><br/><code>gulp</code><br/></li>
+</ul>
