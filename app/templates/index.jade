@@ -1,7 +1,25 @@
 extends layout.jade
 
 block title
-   title Генератор водяных знаков
+	title Генератор водяных знаков
 
 block content
-   h1 Генератор водяных знаков
+	.wrapper
+		.container.cl
+			.main-bl
+				.main-title Генератор водяных знаков
+				.watermark-work
+			.controls-bl
+				.controls-title Настройки
+				//- Блок загрузки изображений
+				.controls-wrap.images-bl
+
+				//- Блок настройки положения	
+				.controls-wrap.location-bl
+
+				//- Блок прозрачности
+				.controls-wrap.opacity-bl
+
+				//- Блок кнопок
+				.btn-bl
+
