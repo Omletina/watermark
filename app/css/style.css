@@ -181,3 +181,12 @@ textarea {
   border-top: 10px solid rgba(249, 126, 118, 0.4);
   border-right: 9px solid transparent;
   border-left: 9px solid transparent; }
+
+/* line 156, stdin */
+.watermark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: forestgreen; }

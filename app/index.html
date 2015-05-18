@@ -36,7 +36,11 @@
             <div class="container cl">
                <div class="main-bl">
                   <div class="main-title">Генератор водяных знаков</div>
-                  <div class="watermark-work"></div>
+                  <div class="watermark-work">
+                     <div class="aim-img"><img src="../img/aim-img.jpg" />
+                        <div class="watermark"></div>
+                     </div>
+                  </div>
                </div>
                <div class="controls-bl">
                   <div class="controls-title">Настройки</div>
@@ -53,14 +57,17 @@
             <div class="footer-copi">© 2014, Это мой сайт, пожалуйста, не копируйте и не воруйте его</div>
          </div>
       </footer>
+      <input type="hidden" value="../img/watermark.jpg" id="watermark" />
       <!-- JS-->
       <!-- build:js js/vendor.js -->
       <!-- bower:js-->
       <script src="/bower/jquery/dist/jquery.js"></script>
+      <script src="/bower/jquery-ui/jquery-ui.js"></script>
       <!-- endbower-->
       <!-- endbuild -->
       <!-- build:js js/site.js -->
       <script src="js/index.js"></script>
+      <script src="js/watermark.js"></script>
       <!-- endbuild -->
    </body>
 
