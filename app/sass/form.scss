@@ -1,0 +1,99 @@
+@import "style.scss";
+
+.form {
+  color: #2e3641;
+  padding: 0 19px;
+
+  &__group {
+    margin-top: 22px;
+    position: relative;
+  }
+}
+
+.input-group {
+  margin: 6px auto;
+  width: 100%;
+  position: relative;
+  transition: all .3s;
+  @extend .cl;
+  &:hover &__icon{
+    background-color: darken(#f97e76, 10%);
+  }
+
+  &__input {
+    width: 82%;
+    height: 27px;
+    display: inline-block;
+    border: 1px solid #9eb2c0;
+    border-radius: 4px 0 0 4px;
+    padding: 3px 3px 6px;
+    font-size: 12px;
+    font-family: "SegoeUILight", sans-serif;
+    color: #9eb2c0;
+    background-color: #f1f1f5;
+    float: left;
+    transition: all .3s;
+    cursor: pointer;
+  }
+
+  &__icon {
+    width: 18%;
+    height: 27px;
+    border-radius: 0 4px 4px 0;
+    background: url("../img/icon-download.png") no-repeat center #f97e76;
+    float: left;
+    transition: all .3s;
+    cursor: pointer;
+  }
+
+
+  &__file-load {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    height: 26px;
+    cursor: pointer;
+  }
+}
+
+.separator {
+  margin-bottom: 30px;
+  &:before {
+//    position: absolute;
+//    z-index: 5;
+//    bottom: -9px;
+//    left: 50%;
+//    margin-left: -9px;
+    content: '';
+//    border-top: 10px solid #f1f1f5;
+//    border-right: 9px solid transparent;
+//    border-left: 9px solid transparent;
+  }
+  &:after {
+    position: absolute;
+    z-index: 2;
+    bottom: -42px;
+    left: 50%;
+    margin-left: -9px;
+    content: '';
+    border-top: 10px solid rgba(249, 126, 118, 0.4);
+    border-right: 9px solid transparent;
+    border-left: 9px solid transparent;
+  }
+}
+
+::-webkit-input-placeholder {
+  color: #9eb2c0;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #9eb2c0;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+  color: #9eb2c0;
+}
+:-ms-input-placeholder {
+  color: #9eb2c0;
+}

@@ -1,4 +1,6 @@
 {
+  "name": "watermark",
+  "version": "0.1.0",
   "devDependencies": {
     "browser-sync": "^2.7.1",
     "gulp": "^3.8.11",

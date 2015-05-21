@@ -1,25 +1,39 @@
 extends layout.jade
 
 block title
-	title Генератор водяных знаков
+    title Генератор водяных знаков
 
 block content
-	.wrapper
-		.container.cl
-			.main-bl
-				.main-title Генератор водяных знаков
-				.watermark-work
-			.controls-bl
-				.controls-title Настройки
-				//- Блок загрузки изображений
-				.controls-wrap.images-bl
+    .wrapper
+        .container.cl
+            .main-bl
+                .main-title Генератор водяных знаков
+                .watermark-work
+            .controls-bl
+                .controls-title Настройки
+                //- Блок загрузки изображений
+                .images-bl
+                    form.form
+                        .form__group
+                            label.form__label Исходное изображение
+                            .form__input.input-group
+                                input.input-group__input(placeholder="image.jpg")
+                                .input-group__icon
+                                    input.input-group__file-load(type="file")
+                        .form__group.separator
+                            label.form__label Водяной знак
+                            .form__input.input-group
+                                input.input-group__input(placeholder="image.png")
+                                .input-group__icon
+                                    input.input-group__file-load(type="file")
 
-				//- Блок настройки положения	
-				.controls-wrap.location-bl
 
-				//- Блок прозрачности
-				.controls-wrap.opacity-bl
+                //- Блок настройки положения
+                .controls-wrap.location-bl
 
-				//- Блок кнопок
-				.btn-bl
+                //- Блок прозрачности
+                .controls-wrap.opacity-bl
+
+                //- Блок кнопок
+                .btn-bl
 

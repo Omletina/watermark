@@ -44,10 +44,11 @@ gulp.task('wiredep', function(){
 
 // Работа с Sass
 gulp.task('sass', function() {
-    return gulp.src('app/sass/style.scss')
+    return gulp.src('app/sass/*.scss')
         .pipe(sass({
             sourceComments: 'map'
         }))
+        .pipe(concatCss("bundle.css"))
         .pipe(gulp.dest('app/css/'));
 });
 
