@@ -2,6 +2,7 @@
 
 var gulp = require('gulp'),
 	jade = require("gulp-jade"),
+	sass = require("gulp-sass"),
 	browserSync = require("browser-sync"),
 	prettify = require("gulp-prettify"),
 	wiredep = require('wiredep').stream,
@@ -41,6 +42,16 @@ gulp.task('wiredep', function(){
 		.pipe(gulp.dest('app/templates/common/'));
 });
 
+// Работа с Sass
+gulp.task('sass', function() {
+    return gulp.src('app/sass/*.scss')
+        .pipe(sass({
+            sourceComments: 'map'
+        }))
+        .pipe(concatCss("bundle.css"))
+        .pipe(gulp.dest('app/css/'));
+});
+
 // Запускаем локальный сервер (только после компиляции jade)
 gulp.task('server', ['jade'], function(){
 	browserSync({
@@ -56,6 +67,7 @@ gulp.task('server', ['jade'], function(){
 gulp.task('watch', function(){
 	gulp.watch('app/templates/**/*.jade', ['jade']);
 	gulp.watch('bower.json', ['wiredep']);
+	gulp.watch('app/sass/*.scss', ['sass']);
 	gulp.watch([
 		'app/js/**/*.js',
 		'app/css/**/*.css'
