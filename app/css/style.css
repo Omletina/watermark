@@ -1,124 +1,121 @@
+/* line 1, stdin */
 * {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
+/* line 6, stdin */
 html, body {
-  height: 100%;
-}
+  height: 100%; }
 
+/* line 10, stdin */
 body {
   background-image: url(../img/page-bg.jpg);
   background-position: 50% 50%;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   background-size: cover;
   color: #fff;
   font-size: 1em;
   line-height: 1.4;
-  font: 14px/1.41 Arial, Helvetica, sans-serif;
-}
+  font: 14px/1.41 Arial, Helvetica, sans-serif; }
 
+/* line 21, stdin */
 ul, li {
-  list-style: none;
-}
+  list-style: none; }
 
+/* line 25, stdin */
 input, textarea {
-  outline: none;
-}
+  outline: none; }
 
+/* line 29, stdin */
 input:active, textarea:active {
-  outline: none;
-}
+  outline: none; }
 
+/* line 33, stdin */
 :focus {
-  outline: none;
-}
+  outline: none; }
 
+/* line 37, stdin */
 textarea {
-  resize: none;
-}
+  resize: none; }
 
+/* line 41, stdin */
 .easing, .easing * {
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
+  transition: all 0.3s ease 0s; }
 
+/* line 48, stdin */
 .box-s {
   webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 /*--- Clearfix : start ---------------*/
+/* line 57, stdin */
 .cl:before,
 .cl:after {
   content: " ";
-  display: table;
-}
+  display: table; }
 
+/* line 62, stdin */
 .cl:after {
-  clear: both;
-}
+  clear: both; }
 
 /*--- Clearfix : end ---------------*/
-
+/* line 68, stdin */
 .wrapper-all {
   position: relative;
-  min-height: 100%;
-}
+  min-height: 100%; }
 
+/* line 73, stdin */
 .wrapper-all:before {
   content: "";
   height: 60px;
-  display: block
-}
+  display: block; }
 
+/* line 79, stdin */
 .wrapper-all:after {
   content: "";
   height: 50px;
-  display: block;
-}
+  display: block; }
 
-// footer 
+/* line 86, stdin */
 .footer {
   display: block;
   height: 50px;
   margin-top: -50px;
   width: 100%;
-  text-align: center;
-}
+  text-align: center; }
 
+/* line 94, stdin */
 .footer-wrap {
   display: inline-block;
-  line-height: 50px;
-}
+  line-height: 50px; }
 
+/* line 99, stdin */
 .footer-copi {
   font-family: 'fira_sanslight';
   color: #fff;
-  font-size: 12px;
-}
+  font-size: 12px; }
 
-// ---------------------------------------
-
+/* line 107, stdin */
 .container {
   width: 960px;
   margin: 0 auto;
-  position: relative;
-}
+  position: relative; }
 
+/* line 113, stdin */
 .main-bl {
   background-color: rgba(46, 54, 65, 0.64);
   width: 702px;
   height: 670px;
   float: left;
   display: block;
-  position: relative;
-}
+  position: relative; }
 
+/* line 122, stdin */
 .main-title {
   font-family: "SegoeUILight";
   font-weight: normal;
@@ -126,32 +123,27 @@ textarea {
   color: #fff;
   font-size: 36px;
   line-height: 1em;
-  margin: 15px 22px 60px;
-}
+  margin: 15px 22px 60px; }
 
+/* line 132, stdin */
 .watermark-work {
   background-color: #fff;
-  // background-image:url("../img/watermark-work-bg.png");
-  // background-position:0 0;
-  // background-repeat:repeat;
   width: 650px;
   height: 535px;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  display: block
+  display: block; }
 
-}
-
-// --------------------------------------
+/* line 147, stdin */
 .controls-bl {
   background-color: #f1f1f5;
   width: 258px;
   height: 670px;
   float: left;
-  display: block;
-}
+  display: block; }
 
+/* line 155, stdin */
 .controls-title {
   display: block;
   text-align: center;
@@ -159,14 +151,14 @@ textarea {
   font-family: 'roboto-light';
   line-height: 26px;
   color: #2e3641;
-  font-size: 26px;
-}
+  font-size: 26px; }
 
+/* line 165, stdin */
 .controls-wrap {
   position: relative;
-  border-bottom: 1px solid rgba(249, 126, 118, 0.4);
-}
+  border-bottom: 1px solid rgba(249, 126, 118, 0.4); }
 
+/* line 170, stdin */
 .controls-wrap:before {
   position: absolute;
   z-index: 5;
@@ -176,9 +168,9 @@ textarea {
   content: '';
   border-top: 10px solid #f1f1f5;
   border-right: 9px solid transparent;
-  border-left: 9px solid transparent;
-}
+  border-left: 9px solid transparent; }
 
+/* line 182, stdin */
 .controls-wrap:after {
   position: absolute;
   z-index: 2;
@@ -188,24 +180,19 @@ textarea {
   content: '';
   border-top: 10px solid rgba(249, 126, 118, 0.4);
   border-right: 9px solid transparent;
-  border-left: 9px solid transparent;
-}
+  border-left: 9px solid transparent; }
 
+/* line 194, stdin */
 .aim-img {
   overflow: hidden;
-  position: relative;
-}
+  position: relative; }
 
+/* line 199, stdin */
 .watermark {
   position: absolute;
   top: 0;
   left: 0;
-  cursor: move;
-
-  &.multy {
-    width: 1000px;
-
-  }
-}
-
-
+  cursor: move; }
+  /* line 205, stdin */
+  .watermark.multy {
+    width: 1000px; }
