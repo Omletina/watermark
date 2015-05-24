@@ -2,11 +2,11 @@
 
 .form {
     color: #2e3641;
-    padding: 0 19px;
 
     &__group {
-        margin-top: 22px;
+        margin-top: 19px;
         position: relative;
+        padding: 0 19px;
     }
 }
 
@@ -16,8 +16,21 @@
     position: relative;
     transition: all .3s;
     @extend .cl;
+
+    &_count {
+        margin: 0 0 12px 0;
+        position: relative;
+        margin-right: 20px;
+    }
+
     &:hover &__icon {
         background-color: darken(#f97e76, 10%);
+    }
+    &__label {
+
+        &_count {
+            margin-right: 5px;
+        }
     }
 
     &__input {
@@ -60,17 +73,148 @@
 }
 
 .separator {
-    margin-bottom: 30px;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(249, 126, 118, 0.4);
+
+    &:before {
+        position: absolute;
+        z-index: 5;
+        bottom: -8px;
+        left: 50%;
+        margin-left: -9px;
+        content: '';
+        border-top: 10px solid #f1f1f5;
+        border-right: 9px solid transparent;
+        border-left: 9px solid transparent;
+    }
     &:after {
         position: absolute;
         z-index: 2;
-        bottom: -42px;
+        bottom: -10px;
         left: 50%;
         margin-left: -9px;
         content: '';
         border-top: 10px solid rgba(249, 126, 118, 0.4);
         border-right: 9px solid transparent;
         border-left: 9px solid transparent;
+    }
+}
+
+.placement {
+    @extend .cl;
+
+    &-select {
+        float: right;
+
+        &__item {
+            float: right;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: all .3s;
+
+            &_multi {
+                background: url("../img/icon-multi-off.png") no-repeat center;
+                width: 20px;
+                height: 20px;
+
+                &:hover {
+                    background: url("../img/icon-multi-hover.png") no-repeat center;
+                }
+                &.active {
+                    background: url("../img/icon-multi-active.png") no-repeat center;
+                }
+            }
+            &_single {
+                background: url("../img/icon-one-off.png") no-repeat center;
+                width: 20px;
+                height: 20px;
+
+                &:hover {
+                    background: url("../img/icon-one-hover.png") no-repeat center;
+                }
+                &.active {
+                    background: url("../img/icon-one-active.png") no-repeat center;
+                }
+            }
+        }
+    }
+}
+.position-select {
+    display: none;
+    @extend .cl;
+    padding-top: 30px;
+
+    &.active {
+        display: block;
+    }
+
+    &__choose {
+        float: left;
+
+    }
+    &__count {
+        float: right;
+    }
+}
+.choose-position {
+    @extend .cl;
+    border: 1px solid #9eb2c0;
+    border-radius: 2px;
+    overflow: hidden;
+    height: ("auto-1px");
+    width: 99px;
+    transition: all .3s;
+    position: relative;
+
+    &__item {
+        float: left;
+        background-color: #dbe1e8;
+        border: 1px solid #9eb2c0;
+        width: 33px;
+        height: 33px;
+        margin: -1px;
+        transition: all .3s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #9eb2c0;
+        }
+        &.active {
+            background-color: #f97e76;
+        }
+    }
+    &__margin {
+        position: absolute;
+        background-color: #f97e76;
+
+        &_left {
+            width: 1px;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+        }
+        &_bottom {
+            height: 1px;
+            top: 50%;
+            right: 0;
+            left: 0;
+        }
+    }
+}
+
+.count-position {
+    float: right;
+    &__item {
+        width: 45px;
+        height: 45px;
+        background-color: #F0F0F4;
+        border: 1px solid #9eb2c0;
+        border-radius: 2px;
+        font-size: 22px;
+        text-align: center;
+        font-family: "SegoeUILight", sans-serif;
     }
 }
 
@@ -90,4 +234,108 @@
 
 :-ms-input-placeholder {
     color: #9eb2c0;
+}
+
+
+//UI селекторы положения водяного знака
+.ui-icon-triangle-1-n {
+    background: url("../img/icon-arrows.png") 0 0 no-repeat;
+    width: 13px;
+    height: 8px;
+    display: inline-block;
+    font-size: 0;
+    &:hover {
+        background: url("../img/icon-arrows.png") -19px 0 no-repeat;
+    }
+}
+.ui-icon-triangle-1-s {
+    background: url("../img/icon-arrows.png") 0 -20px no-repeat;
+    width: 13px;
+    height: 8px;
+    display: inline-block;
+    font-size: 0;
+    &:hover {
+        background: url("../img/icon-arrows.png") -19px -20px no-repeat;
+    }
+}
+.ui-spinner-down {
+    position: absolute;
+    bottom: 3px;
+    right: -19px;
+    cursor: pointer;
+}
+.ui-spinner-up {
+    position: absolute;
+    top: 3px;
+    right: -19px;
+    cursor: pointer;
+}
+
+//UI селекторы прозрачности водяного знака
+.ui-slider-horizontal {
+    width: 218px;
+    height: 3px;
+    margin-top: 22px;
+    background-color: #dbe1e8;
+    position: relative;
+    margin-bottom: 8px;
+}
+.ui-slider-range {
+    background-color: #9eb2c0;
+    height: 100%;
+}
+
+.ui-slider-handle {
+    background: url("../img/slider-handle.png") no-repeat;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    touch-action: none;
+    top: -11px;
+    margin-left: -12px;
+
+    &:hover {
+        background: url("../img/slider-handle-active.png") no-repeat;
+    }
+    &.ui-state-active {
+        background: url("../img/slider-handle-active.png") no-repeat;
+    }
+}
+
+//Кнопки
+.btn {
+    border-radius: 3px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 18px;
+    color: #ffffff;
+    font-family: "roboto-medium", sans-serif;
+    width: 99px;
+
+    &__box {
+        padding: 55px 10px;
+        @extend .cl;
+    }
+    &__clear {
+        background-color: #c1cfd9;
+        border: 1px solid #c1cfd9;
+        float: left;
+
+        &:hover {
+            background-color: #b8c5cf;
+            border: 1px solid #9eb2c0;
+        }
+    }
+    &__save {
+        background-color: #f97e76;
+        border: 1px solid #f97e76;
+        float: right;
+
+        &:hover {
+            background-color: #f17a73;
+            border: 1px solid #e3736c;
+        }
+    }
 }
