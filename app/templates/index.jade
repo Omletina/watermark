@@ -13,28 +13,75 @@ block content
                         img(src="../img/aim-img.jpg")
             .controls-bl
                 .controls-title Настройки
-                //- Блок загрузки изображений
-                .images-bl
-                    form.form
-                        .form__group
-                            label.form__label Исходное изображение
-                            .form__input.input-group
-                                input.input-group__input(placeholder="image.jpg")
-                                .input-group__icon
-                                    input.input-group__file-load(type="file")
-                        .form__group.separator
-                            label.form__label Водяной знак
-                            .form__input.input-group
-                                input.input-group__input(placeholder="image.png")
-                                .input-group__icon
-                                    input.input-group__file-load(type="file")
+                form.form
+                    //- Блок загрузки изображений
+                    .form__group
+                        label.form__label Исходное изображение
+                        .form__input.input-group
+                            input.input-group__input(placeholder="image.jpg")
+                            .input-group__icon
+                                input.input-group__file-load(type="file")
+                    .form__group
+                        label.form__label Водяной знак
+                        .form__input.input-group
+                            input.input-group__input(placeholder="image.png")
+                            .input-group__icon
+                                input.input-group__file-load(type="file")
+                    .separator
+                    //- Блок настройки положения
+                    .form__group
+                        .placement
+                            label.form__label Положение
+                            .placement-select
+                                .placement-select__item.placement-select__item_single.active(data-select-placement="#chooseSingle")
+                                .placement-select__item.placement-select__item_multi(data-select-placement="#chooseMulti")
+                        .position-select.position-select_single.active(id="chooseSingle")
+                            .position-select__choose.choose-position
+                                .choose-position__item.active(id="top-left")
+                                .choose-position__item(id="top-center")
+                                .choose-position__item(id="top-right")
+                                .choose-position__item(id="middle-left")
+                                .choose-position__item(id="middle-center")
+                                .choose-position__item(id="middle-right")
+                                .choose-position__item(id="bottom-left")
+                                .choose-position__item(id="bottom-center")
+                                .choose-position__item(id="bottom-right")
 
-                //- Блок настройки положения
-                .controls-wrap.location-bl
+                            .position-select__count.count-position
+                                .input-group_count
+                                    label.input-group__label_count(for="moveX") X
+                                    input.count-position__item.count-position__item_x(id="moveX", name="value")
+                                .input-group_count
+                                    label.input-group__label_count(for="moveY") Y
+                                    input.count-position__item.count-position__item_y(id="moveY", name="value")
+                        .position-select.position-select_multi(id="chooseMulti")
+                            .position-select__choose.choose-position
+                                .choose-position__margin.choose-position__margin_left
+                                .choose-position__margin.choose-position__margin_bottom
+                                .choose-position__item
+                                .choose-position__item
+                                .choose-position__item
+                                .choose-position__item
+                                .choose-position__item
+                                .choose-position__item
+                                .choose-position__item
+                                .choose-position__item
+                                .choose-position__item
 
-                //- Блок прозрачности
-                .controls-wrap.opacity-bl
-
-                //- Блок кнопок
-                .btn-bl
-
+                            .position-select__count.count-position
+                                .input-group_count
+                                    label.input-group__label_count(for="margin-left") X
+                                    input.count-position__item.count-position__item_x(id="margin-left", name="value")
+                                .input-group_count
+                                    label.input-group__label_count(for="margin-bottom") Y
+                                    input.count-position__item.count-position__item_y(id="margin-bottom", name="value")
+                    .separator
+                    //- Блок прозрачности
+                    .form__group
+                        label.input-group__label(for="opacity") Прозрачность
+                        .input-group__slider(id="opacity")
+                    .separator
+                    //- Блок кнопок
+                    .btn__box
+                        button.btn.btn__clear Сброс
+                        button.btn.btn__save Скачать
