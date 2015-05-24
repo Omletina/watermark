@@ -153,4 +153,21 @@ textarea { resize:none; }
 	border-left: 9px solid transparent;
 }
 
+.aim-img {
+  overflow: hidden;
+  position: relative;
+}
+
+.watermark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: move;
+
+  &.multy {
+    width: 1000px;
+
+  }
+}
+
 
