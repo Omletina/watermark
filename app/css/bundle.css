@@ -7,14 +7,14 @@
   padding: 0;
 }
 
-/* line 2, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 6, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 html,
 body {
   height: 100%;
 }
 
-/* line 3, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 10, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 body {
   background-image: url("../img/page-bg.jpg");
@@ -27,40 +27,40 @@ body {
   font: 14px/1.41 Arial, Helvetica, sans-serif;
 }
 
-/* line 13, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 21, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 ul,
 li {
   list-style: none;
 }
 
-/* line 14, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 25, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 input,
 textarea {
   outline: none;
 }
 
-/* line 15, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 29, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 input:active,
 textarea:active {
   outline: none;
 }
 
-/* line 16, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 33, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 :focus {
   outline: none;
 }
 
-/* line 17, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 37, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 textarea {
   resize: none;
 }
 
-/* line 18, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 41, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .easing,
 .easing * {
@@ -70,7 +70,7 @@ textarea {
   transition: all 0.3s ease 0s;
 }
 
-/* line 24, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 48, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .box-s {
   webkit-box-sizing: border-box;
@@ -81,7 +81,7 @@ textarea {
 
 /*--- Clearfix : start ---------------*/
 
-/* line 32, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 57, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .cl:before,
 .input-group:before,
@@ -91,7 +91,7 @@ textarea {
   display: table;
 }
 
-/* line 33, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 62, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .cl:after,
 .input-group:after {
@@ -100,14 +100,14 @@ textarea {
 
 /*--- Clearfix : end ---------------*/
 
-/* line 37, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 68, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .wrapper-all {
   position: relative;
   min-height: 100%;
 }
 
-/* line 41, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 73, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .wrapper-all:before {
   content: "";
@@ -115,7 +115,7 @@ textarea {
   display: block;
 }
 
-/* line 46, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 79, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .wrapper-all:after {
   content: "";
@@ -123,7 +123,7 @@ textarea {
   display: block;
 }
 
-/* line 53, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 86, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .footer {
   display: block;
@@ -133,14 +133,14 @@ textarea {
   text-align: center;
 }
 
-/* line 60, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 94, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .footer-wrap {
   display: inline-block;
   line-height: 50px;
 }
 
-/* line 64, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 99, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .footer-copi {
   font-family: 'fira_sanslight';
@@ -148,7 +148,7 @@ textarea {
   font-size: 12px;
 }
 
-/* line 72, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 107, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .container {
   width: 960px;
@@ -156,7 +156,7 @@ textarea {
   position: relative;
 }
 
-/* line 77, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 113, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .main-bl {
   background-color: rgba(46, 54, 65, 0.64);
@@ -167,7 +167,7 @@ textarea {
   position: relative;
 }
 
-/* line 85, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 122, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .main-title {
   font-family: "SegoeUILight";
@@ -179,7 +179,7 @@ textarea {
   margin: 15px 22px 60px;
 }
 
-/* line 95, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 132, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .watermark-work {
   background-color: #fff;
@@ -191,7 +191,7 @@ textarea {
   display: block;
 }
 
-/* line 111, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 147, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .controls-bl {
   background-color: #f1f1f5;
@@ -201,7 +201,7 @@ textarea {
   display: block;
 }
 
-/* line 119, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 155, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .controls-title {
   display: block;
@@ -213,14 +213,14 @@ textarea {
   font-size: 26px;
 }
 
-/* line 129, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 165, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .controls-wrap {
   position: relative;
   border-bottom: 1px solid rgba(249, 126, 118, 0.4);
 }
 
-/* line 133, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 170, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .controls-wrap:before {
   position: absolute;
@@ -234,7 +234,7 @@ textarea {
   border-left: 9px solid transparent;
 }
 
-/* line 144, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+/* line 182, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
 
 .controls-wrap:after {
   position: absolute;
@@ -246,6 +246,28 @@ textarea {
   border-top: 10px solid rgba(249, 126, 118, 0.4);
   border-right: 9px solid transparent;
   border-left: 9px solid transparent;
+}
+
+/* line 194, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+
+.aim-img {
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 199, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+
+.watermark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: move;
+}
+
+/* line 205, /Users/urla/Documents/Яндекс.Диск/Обучение/Frontend/ДЗ/watermark/app/sass/style.scss */
+
+.watermark.multy {
+  width: 1000px;
 }
 
 /* line 3, stdin */
@@ -293,9 +315,10 @@ textarea {
   float: left;
   transition: all 0.3s;
   cursor: pointer;
+  border-right: none;
 }
 
-/* line 39, stdin */
+/* line 40, stdin */
 
 .input-group__icon {
   width: 18%;
@@ -328,12 +351,6 @@ textarea {
 
 /* line 64, stdin */
 
-.separator:before {
-  content: '';
-}
-
-/* line 75, stdin */
-
 .separator:after {
   position: absolute;
   z-index: 2;
@@ -346,27 +363,27 @@ textarea {
   border-left: 9px solid transparent;
 }
 
-/* line 88, stdin */
+/* line 77, stdin */
 
 ::-webkit-input-placeholder {
   color: #9eb2c0;
 }
 
-/* line 91, stdin */
+/* line 81, stdin */
 
 :-moz-placeholder {
   /* Firefox 18- */
   color: #9eb2c0;
 }
 
-/* line 94, stdin */
+/* line 86, stdin */
 
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: #9eb2c0;
 }
 
-/* line 97, stdin */
+/* line 91, stdin */
 
 :-ms-input-placeholder {
   color: #9eb2c0;
@@ -378,14 +395,14 @@ textarea {
   padding: 0;
 }
 
-/* line 2, stdin */
+/* line 6, stdin */
 
 html,
 body {
   height: 100%;
 }
 
-/* line 3, stdin */
+/* line 10, stdin */
 
 body {
   background-image: url("../img/page-bg.jpg");
@@ -398,40 +415,40 @@ body {
   font: 14px/1.41 Arial, Helvetica, sans-serif;
 }
 
-/* line 13, stdin */
+/* line 21, stdin */
 
 ul,
 li {
   list-style: none;
 }
 
-/* line 14, stdin */
+/* line 25, stdin */
 
 input,
 textarea {
   outline: none;
 }
 
-/* line 15, stdin */
+/* line 29, stdin */
 
 input:active,
 textarea:active {
   outline: none;
 }
 
-/* line 16, stdin */
+/* line 33, stdin */
 
 :focus {
   outline: none;
 }
 
-/* line 17, stdin */
+/* line 37, stdin */
 
 textarea {
   resize: none;
 }
 
-/* line 18, stdin */
+/* line 41, stdin */
 
 .easing,
 .easing * {
@@ -441,7 +458,7 @@ textarea {
   transition: all 0.3s ease 0s;
 }
 
-/* line 24, stdin */
+/* line 48, stdin */
 
 .box-s {
   webkit-box-sizing: border-box;
@@ -452,7 +469,7 @@ textarea {
 
 /*--- Clearfix : start ---------------*/
 
-/* line 32, stdin */
+/* line 57, stdin */
 
 .cl:before,
 .cl:after {
@@ -460,7 +477,7 @@ textarea {
   display: table;
 }
 
-/* line 33, stdin */
+/* line 62, stdin */
 
 .cl:after {
   clear: both;
@@ -468,14 +485,14 @@ textarea {
 
 /*--- Clearfix : end ---------------*/
 
-/* line 37, stdin */
+/* line 68, stdin */
 
 .wrapper-all {
   position: relative;
   min-height: 100%;
 }
 
-/* line 41, stdin */
+/* line 73, stdin */
 
 .wrapper-all:before {
   content: "";
@@ -483,7 +500,7 @@ textarea {
   display: block;
 }
 
-/* line 46, stdin */
+/* line 79, stdin */
 
 .wrapper-all:after {
   content: "";
@@ -491,7 +508,7 @@ textarea {
   display: block;
 }
 
-/* line 53, stdin */
+/* line 86, stdin */
 
 .footer {
   display: block;
@@ -501,14 +518,14 @@ textarea {
   text-align: center;
 }
 
-/* line 60, stdin */
+/* line 94, stdin */
 
 .footer-wrap {
   display: inline-block;
   line-height: 50px;
 }
 
-/* line 64, stdin */
+/* line 99, stdin */
 
 .footer-copi {
   font-family: 'fira_sanslight';
@@ -516,7 +533,7 @@ textarea {
   font-size: 12px;
 }
 
-/* line 72, stdin */
+/* line 107, stdin */
 
 .container {
   width: 960px;
@@ -524,7 +541,7 @@ textarea {
   position: relative;
 }
 
-/* line 77, stdin */
+/* line 113, stdin */
 
 .main-bl {
   background-color: rgba(46, 54, 65, 0.64);
@@ -535,7 +552,7 @@ textarea {
   position: relative;
 }
 
-/* line 85, stdin */
+/* line 122, stdin */
 
 .main-title {
   font-family: "SegoeUILight";
@@ -547,7 +564,7 @@ textarea {
   margin: 15px 22px 60px;
 }
 
-/* line 95, stdin */
+/* line 132, stdin */
 
 .watermark-work {
   background-color: #fff;
@@ -559,7 +576,7 @@ textarea {
   display: block;
 }
 
-/* line 111, stdin */
+/* line 147, stdin */
 
 .controls-bl {
   background-color: #f1f1f5;
@@ -569,7 +586,7 @@ textarea {
   display: block;
 }
 
-/* line 119, stdin */
+/* line 155, stdin */
 
 .controls-title {
   display: block;
@@ -581,14 +598,14 @@ textarea {
   font-size: 26px;
 }
 
-/* line 129, stdin */
+/* line 165, stdin */
 
 .controls-wrap {
   position: relative;
   border-bottom: 1px solid rgba(249, 126, 118, 0.4);
 }
 
-/* line 133, stdin */
+/* line 170, stdin */
 
 .controls-wrap:before {
   position: absolute;
@@ -602,7 +619,7 @@ textarea {
   border-left: 9px solid transparent;
 }
 
-/* line 144, stdin */
+/* line 182, stdin */
 
 .controls-wrap:after {
   position: absolute;
@@ -614,4 +631,26 @@ textarea {
   border-top: 10px solid rgba(249, 126, 118, 0.4);
   border-right: 9px solid transparent;
   border-left: 9px solid transparent;
+}
+
+/* line 194, stdin */
+
+.aim-img {
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 199, stdin */
+
+.watermark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: move;
+}
+
+/* line 205, stdin */
+
+.watermark.multy {
+  width: 1000px;
 }

@@ -53,7 +53,7 @@ gulp.task('sass', function() {
 });
 
 // Запускаем локальный сервер (только после компиляции jade)
-gulp.task('server', ['jade'], function(){
+gulp.task('server', ['jade', 'sass'], function(){
 	browserSync({
 		notify: false,
 		port: 9000,
