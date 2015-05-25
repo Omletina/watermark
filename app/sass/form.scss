@@ -23,9 +23,6 @@
         margin-right: 20px;
     }
 
-    &:hover &__icon {
-        background-color: darken(#f97e76, 10%);
-    }
     &__label {
 
         &_count {
@@ -48,6 +45,8 @@
         transition: all .3s;
         cursor: pointer;
         border-right: none;
+        z-index: 3;
+        position: relative;
     }
 
     &__icon {
@@ -58,12 +57,16 @@
         float: left;
         transition: all .3s;
         cursor: pointer;
+
+        &:hover {
+            background-color: darken(#f97e76, 10%);
+        }
     }
 
     &__file-load {
         position: absolute;
         top: 0;
-        left: 0;
+        right: 0;
         width: 100%;
         opacity: 0;
         filter: alpha(opacity=0);

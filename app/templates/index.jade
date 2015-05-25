@@ -18,15 +18,15 @@ block content
                     .form__group
                         label.form__label Исходное изображение
                         .form__input.input-group
-                            input.input-group__input(placeholder="image.jpg")
+                            input.input-group__input(placeholder="image.jpg", id="image", disabled)
                             .input-group__icon
-                                input.input-group__file-load(type="file")
+                                input.input-group__file-load(type="file", data-download-file="#image")
                     .form__group
                         label.form__label Водяной знак
                         .form__input.input-group
-                            input.input-group__input(placeholder="image.png")
+                            input.input-group__input(placeholder="image.png", id="watermark", disabled)
                             .input-group__icon
-                                input.input-group__file-load(type="file")
+                                input.input-group__file-load(type="file", data-download-file="#watermark")
                     .separator
                     //- Блок настройки положения
                     .form__group
