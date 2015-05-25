@@ -31,7 +31,7 @@ $(function () {
         $(input).val( filename ); // Set the value
     });
 
-    //Меняем ширину дива который визуализирует отступ между водяными знаками в режиме "Замостить"
+    //Меняем размеры дивов которые визуализируют отступы между водяными знаками в режиме "Замостить"
     marginLeft.on( "spin", function( event, ui ) {
         var marginLeftVal = ui.value;
         $('.choose-position__margin_left').css({
