@@ -3,7 +3,7 @@ $(function () {
     //Включаем UI объекты определяющие положение и прозрачность водянного(ых) знака
     var moveX = $("#moveX").spinner(),
         moveY = $("#moveY").spinner(),
-        marginLeft = $("#margin-left").spinner({
+        marginRight = $("#margin-right").spinner({
             min: 0
         }),
         marginBottom = $("#margin-bottom").spinner({
@@ -44,16 +44,16 @@ $(function () {
     });
 
     //Меняем размеры дивов которые визуализируют отступы между водяными знаками в режиме "Замостить"
-    marginLeft.on( "spin", function( event, ui ) {
+    marginRight.on( "spin", function( event, ui ) {
 
-        var marginLeftVal = ui.value;
+        var marginRightVal = ui.value;
 
-        $('.choose-position__margin_left').css({
-            'width': marginLeftVal,
-            'margin-left': -marginLeftVal/2
+        $('.choose-position__margin_right').css({
+            'width': marginRightVal,
+            'margin-left': -marginRightVal/2
         });
 
-        watermark.setRightMargin(marginLeftVal);
+        watermark.setRightMargin(marginRightVal);
     } );
     marginBottom.on( "spin", function( event, ui ) {
 
