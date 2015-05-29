@@ -81,6 +81,109 @@ $(function () {
     }
 
 
+    $('.choose-position__item').on('click', function(){
+        var $this = $(this);
+        var posId = $this.attr('id');
+        $this.addClass('active').siblings().removeClass('active');
+
+
+        var coords = {};
+
+        switch(posId){
+            case 'top-left':{
+                coords.x = 0;
+                coords.y = 0;
+                break;
+            }
+
+            case 'top-center':{
+                coords.x = getMiddleX();
+                coords.y = 0;
+                break;
+            }
+
+            case 'top-right':{
+                coords.x = getRightX();
+                coords.y = 0;
+                break;
+            }
+
+            case 'middle-left':{
+                coords.x = 0;
+                coords.y = getMiddleY();
+                break;
+            }
+
+            case 'middle-center':{
+                coords.x = getMiddleX();
+                coords.y = getMiddleY();
+                break;
+            }
+
+            case 'middle-right':{
+                coords.x = getRightX();
+                coords.y = getMiddleY();
+                break;
+            }
+
+            case 'bottom-left':{
+                coords.x = 0;
+                coords.y = getBottomY();
+                break;
+            }
+
+            case 'bottom-center':{
+                coords.x = getMiddleX();
+                coords.y = getBottomY();
+                break;
+            }
+
+            case 'bottom-right':{
+                coords.x = getRightX();
+                coords.y = getBottomY();
+                break;
+            }
+
+            default:{
+                coords.x = 0;
+                coords.y = 0;
+            }
+        }
+
+        watermark.setPosition(coords);
+
+    });
+
+    function getMiddleX(){
+        var wm_size = watermark.getSize();
+        var aimImgW = getAimImgW();
+        return aimImgW/2 - wm_size.w/2;
+    }
+
+    function getMiddleY(){
+        var wm_size = watermark.getSize();
+        var aimImgH = getAimImgH();
+        return aimImgH/2 - wm_size.h/2;
+    }
+
+    function getRightX(){
+        var wm_size = watermark.getSize();
+        var aimImgW = getAimImgW();
+        return aimImgW - wm_size.w;
+    }
+    function getBottomY(){
+        var wm_size = watermark.getSize();
+        var aimImgH = getAimImgH();
+        return aimImgH - wm_size.h;
+    }
+
+    function getAimImgW(){
+        return $('.aim-img img').width();
+    }
+    function getAimImgH(){
+        return $('.aim-img img').height();
+    }
+
     $('.form').on('submit', function(e){
 
         if(watermark){

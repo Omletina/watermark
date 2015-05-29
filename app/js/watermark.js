@@ -13,7 +13,8 @@ var watermark = function () {
      * */
     var init = function (src, mode) {
         wm_src = src;
-        _clear()
+        _clear();
+
 
         if(mode == 'multy'){
             _initMultyMode();
@@ -22,6 +23,8 @@ var watermark = function () {
         }
 
     };
+
+
 
     var _stop = function( event, ui ) {
 
@@ -62,6 +65,7 @@ var watermark = function () {
         $draggable_elem.append($img);
 
         $draggable_elem.appendTo('.aim-img');
+
         $draggable_elem.draggable({
             /*containment: "parent",*/
             stop: _stop
@@ -88,14 +92,34 @@ var watermark = function () {
     }
 
     var _getWmImg = function(){
-        return $('<img src="'+wm_src+'">');
+        return $('<img class="wm_image" src="'+wm_src+'">');
+    }
+
+    var getSize = function(){
+        var $img = $('.'+wm_class+' img:first-child');
+        
+        return {
+            w: $img[0].width,
+            h: $img[0].height
+        };
+
+    }
+
+    var setPosition = function(coords){
+
+        var $img = $('.'+wm_class+' img:first-child');
+
+        $img.css({'left': coords.x, 'top': coords.y, 'position': 'absolute'});
+
     }
 
     return {
-        init: init,
-        setRightMargin: setRightMargin,
-        setBottomMargin: setBottomMargin,
-        getCoords: getCoords
+        init:               init,
+        setRightMargin:     setRightMargin,
+        setBottomMargin:    setBottomMargin,
+        getCoords:          getCoords,
+        getSize:            getSize,
+        setPosition:        setPosition
     };
 }();
 
