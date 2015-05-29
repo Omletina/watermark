@@ -36,6 +36,8 @@ var watermark = function () {
     }
 
     var _clear = function(){
+        coords.x = 0;
+        coords.y = 0;
         $('.'+wm_class).remove();
     }
 
@@ -61,7 +63,7 @@ var watermark = function () {
 
         $draggable_elem.appendTo('.aim-img');
         $draggable_elem.draggable({
-            containment: "parent",
+            /*containment: "parent",*/
             stop: _stop
         });
     }

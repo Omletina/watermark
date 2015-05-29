@@ -29,8 +29,10 @@ $(function () {
 
         if($this.hasClass('placement-select__item_multi')){
             watermark.init(imgFile, 'multy');
+            $('input[name=mode]').val('multy');
         }else{
             watermark.init(imgFile);
+            $('input[name=mode]').val('single');
         }
 
     });
@@ -54,6 +56,8 @@ $(function () {
         });
 
         watermark.setRightMargin(marginLeftVal);
+
+        $('input[name=x_margin]').val(marginLeftVal);
     } );
     marginBottom.on( "spin", function( event, ui ) {
 
@@ -65,10 +69,34 @@ $(function () {
         });
 
         watermark.setBottomMargin(marginBottomVal);
+
+        $('input[name=y_margin]').val(marginBottomVal);
     } );
 
     function refreshOpacity(){
-        $('.watermark').css({'opacity': $("#opacity").slider('value')/100});
+        var opacity = $("#opacity").slider('value')/100;
+        $('.watermark').css({'opacity': opacity});
 
+        $('input[name=opacity]').val(opacity);
     }
+
+
+    $('.form').on('submit', function(e){
+
+        if(watermark){
+            var coords = watermark.getCoords();
+            $('input[name=x]').val(coords.x);
+            $('input[name=y]').val(coords.y);
+        }
+
+        // для отладки - можно потом удалить
+        console.log('x: '       +$('input[name=x]').val());
+        console.log('y: '       +$('input[name=y]').val());
+        console.log('x_margin: '+$('input[name=x_margin]').val());
+        console.log('y_margin: '+$('input[name=y_margin]').val());
+        console.log('opacity: ' +$('input[name=opacity]').val());
+        console.log('mode: '    +$('input[name=mode]').val());
+
+        e.preventDefault(e);
+    });
 });
