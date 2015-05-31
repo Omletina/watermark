@@ -23,10 +23,10 @@ block content
             .controls-bl
                 .controls-title Настройки
                 form.form
-                    input(type="hidden", name="x")
-                    input(type="hidden", name="y")
-                    input(type="hidden", name="x_margin")
-                    input(type="hidden", name="y_margin")
+                    //input(type="hidden", name="x")
+                    //input(type="hidden", name="y")
+                    //input(type="hidden", name="x_margin")
+                    //input(type="hidden", name="y_margin")
                     input(type="hidden", name="opacity")
                     input(type="hidden", name="mode")
                     //- Блок загрузки изображений
@@ -35,13 +35,13 @@ block content
                         .form__input.input-group
                             input.input-group__input(placeholder="image.jpg", id="image", disabled)
                             .input-group__icon
-                                input.input-group__file-load(type="file", data-download-file="#image")
+                                input.input-group__file-load(type="file", data-file-name-input="#image")
                     .form__group
                         label.form__label Водяной знак
                         .form__input.input-group
                             input.input-group__input(placeholder="image.png", id="watermark", disabled)
                             .input-group__icon
-                                input.input-group__file-load(type="file", data-download-file="#watermark")
+                                input.input-group__file-load(type="file", data-file-name-input="#watermark")
                     .separator
                     //- Блок настройки положения
                     .form__group
@@ -52,26 +52,26 @@ block content
                                 .placement-select__item.placement-select__item_multi(data-select-placement="#chooseMulti")
                         .position-select.position-select_single.active(id="chooseSingle")
                             .position-select__choose.choose-position
-                                .choose-position__item.active(id="top-left")
-                                .choose-position__item(id="top-center")
-                                .choose-position__item(id="top-right")
-                                .choose-position__item(id="middle-left")
-                                .choose-position__item(id="middle-center")
-                                .choose-position__item(id="middle-right")
-                                .choose-position__item(id="bottom-left")
-                                .choose-position__item(id="bottom-center")
-                                .choose-position__item(id="bottom-right")
+                                .choose-position__item.choose-position__item_single.active(id="top-left")
+                                .choose-position__item.choose-position__item_single(id="top-center")
+                                .choose-position__item.choose-position__item_single(id="top-right")
+                                .choose-position__item.choose-position__item_single(id="middle-left")
+                                .choose-position__item.choose-position__item_single(id="middle-center")
+                                .choose-position__item.choose-position__item_single(id="middle-right")
+                                .choose-position__item.choose-position__item_single(id="bottom-left")
+                                .choose-position__item.choose-position__item_single(id="bottom-center")
+                                .choose-position__item.choose-position__item_single(id="bottom-right")
 
                             .position-select__count.count-position
                                 .input-group_count
                                     label.input-group__label_count(for="moveX") X
-                                    input.count-position__item.count-position__item_x(id="moveX", name="value")
+                                    input.count-position__item.count-position__item_x(id="moveX", name="value_x", value="0")
                                 .input-group_count
                                     label.input-group__label_count(for="moveY") Y
-                                    input.count-position__item.count-position__item_y(id="moveY", name="value")
+                                    input.count-position__item.count-position__item_y(id="moveY", name="value_y", value="0")
                         .position-select.position-select_multi(id="chooseMulti")
                             .position-select__choose.choose-position
-                                .choose-position__margin.choose-position__margin_left
+                                .choose-position__margin.choose-position__margin_right
                                 .choose-position__margin.choose-position__margin_bottom
                                 .choose-position__item
                                 .choose-position__item
@@ -85,15 +85,15 @@ block content
 
                             .position-select__count.count-position
                                 .input-group_count
-                                    label.input-group__label_count(for="margin-left") X
-                                    input.count-position__item.count-position__item_x(id="margin-left", name="value")
+                                    label.input-group__label_count(for="margin-right") X
+                                    input.count-position__item.count-position__item_x(id="margin-right", name="value_right", value="0")
                                 .input-group_count
                                     label.input-group__label_count(for="margin-bottom") Y
-                                    input.count-position__item.count-position__item_y(id="margin-bottom", name="value")
+                                    input.count-position__item.count-position__item_y(id="margin-bottom", name="value_bottom", value="0")
                     .separator
                     //- Блок прозрачности
                     .form__group
-                        label.input-group__label(for="opacity") Прозрачность
+                        label.input-group__label Прозрачность
                         .input-group__slider(id="opacity")
                     .separator
                     //- Блок кнопок

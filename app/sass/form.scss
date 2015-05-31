@@ -181,18 +181,22 @@
         transition: all .3s;
         cursor: pointer;
 
-        &:hover {
-            background-color: #9eb2c0;
+        &_single {
+
+            &:hover {
+                background-color: #9eb2c0;
+            }
+            &.active {
+                background-color: #f97e76;
+            }
         }
-        &.active {
-            background-color: #f97e76;
-        }
+
     }
     &__margin {
         position: absolute;
         background-color: #f97e76;
 
-        &_left {
+        &_right {
             width: 1px;
             top: 0;
             bottom: 0;
