@@ -39,7 +39,7 @@ $(function () {
 
     //Отображаем в кастомном инпуте имя загруженного файла
     $('input[type=file]').change(function() {
-        var input = $(this).data('download-file'),
+        var input = $(this).data('file-name-input'),
             filename = $(this).val().split('\\').pop();
 
         $(input).val( filename ); // Set the value
@@ -57,7 +57,7 @@ $(function () {
 
         watermark.setRightMargin(marginRightVal);
 
-        $('input[name=x_margin]').val(marginLeftVal);
+        $('input[name=x_margin]').val(marginRightVal);
     } );
     marginBottom.on( "spin", function( event, ui ) {
 
