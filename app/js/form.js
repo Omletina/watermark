@@ -30,9 +30,18 @@ $(function () {
         if($this.hasClass('placement-select__item_multi')){
             watermark.init(imgFile, 'multy');
             $('input[name=mode]').val('multy');
+
+            //Используем сохраненное значение в случае переключения между режимами мульти и сингл
+            watermark.setRightMargin(marginRight.val());
+            watermark.setBottomMargin(marginBottom.val());
+
         }else{
             watermark.init(imgFile);
             $('input[name=mode]').val('single');
+
+            //Используем сохраненное значение в случае переключения между режимами мульти и сингл
+            watermark.setPosition({x: moveX.val(), y: moveY.val()});
+
         }
 
     });
@@ -43,6 +52,16 @@ $(function () {
             filename = $(this).val().split('\\').pop();
 
         $(input).val( filename ); // Set the value
+    });
+
+    //Изменяем положение водяного знака(режим сингл, координата Х)
+    moveX.on('spin',function( event, ui ) {
+        watermark.setPosition({x: ui.value});
+    });
+
+    //Изменяем положение водяного знака(режим сингл, координата Y)
+    moveY.on('spin',function( event, ui ) {
+        watermark.setPosition({y: ui.value});
     });
 
     //Меняем размеры дивов которые визуализируют отступы между водяными знаками в режиме "Замостить"
@@ -81,6 +100,7 @@ $(function () {
     }
 
 
+    //Режим сингл: позиционирование водяного знака
     $('.choose-position__item').on('click', function(){
         var $this = $(this);
         var posId = $this.attr('id');
@@ -151,19 +171,22 @@ $(function () {
         }
 
         watermark.setPosition(coords);
+        // Транслируем значение координат в инпуты
+        moveX.val(coords.x);
+        moveY.val(coords.y);
 
     });
 
     function getMiddleX(){
         var wm_size = watermark.getSize();
         var aimImgW = getAimImgW();
-        return aimImgW/2 - wm_size.w/2;
+        return Math.round(aimImgW/2 - wm_size.w/2);
     }
 
     function getMiddleY(){
         var wm_size = watermark.getSize();
         var aimImgH = getAimImgH();
-        return aimImgH/2 - wm_size.h/2;
+        return Math.round(aimImgH/2 - wm_size.h/2);
     }
 
     function getRightX(){
@@ -183,6 +206,12 @@ $(function () {
     function getAimImgH(){
         return $('.aim-img img').height();
     }
+
+    //moveX.on()
+
+
+
+    //Отправка формы
 
     $('.form').on('submit', function(e){
 

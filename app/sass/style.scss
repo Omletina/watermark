@@ -205,16 +205,18 @@ textarea {
 
     }
 }
-.lang-buttons{
+
+.lang-buttons {
     position: absolute;
-    top:101px;
+    top: 101px;
 }
-.lang-block{
-    height:35px;
-    width:43px;
+
+.lang-block {
+    height: 35px;
+    width: 43px;
     color: #8e9298;
     background-color: rgba(255, 255, 255, 0.7);
-    text-align:center;
+    text-align: center;
     vertical-align: middle;
     margin-bottom: 1px;
     font-size: 19px;
@@ -222,22 +224,36 @@ textarea {
     box-sizing: border-box;
     font-family: "SegoeUILight";
 }
-.soc-web{
+
+.soc-web {
     position: absolute;
-    top:188px;
+    top: 188px;
 }
-.soc-icons-fb, .soc-icons-vk, .soc-icons-tw{
+
+.soc-icons-fb, .soc-icons-vk, .soc-icons-tw {
     height: 40px;
     width: 44px;
     background-image: url(../img/left-buttons.png);
     background-color: rgba(255, 255, 255, 0.7);
 }
-.soc-icons-fb{background-position: -6px -7px;
-    &:hover{background-position: -60px -7px}
+
+.soc-icons-fb {
+    background-position: -6px -7px;
+    &:hover {
+        background-position: -60px -7px
     }
-.soc-icons-tw{background-position: -6px -51px;
-    &:hover{background-position: -61px -51px}
+}
+
+.soc-icons-tw {
+    background-position: -6px -51px;
+    &:hover {
+        background-position: -61px -51px
     }
-.soc-icons-vk{background-position: -7px 94px;
-    &:hover{background-position: -61px 94px}
+}
+
+.soc-icons-vk {
+    background-position: -7px 94px;
+    &:hover {
+        background-position: -61px 94px
     }
+}
