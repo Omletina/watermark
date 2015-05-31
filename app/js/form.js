@@ -120,73 +120,53 @@ $(function () {
 
         switch (posId) {
             case 'top-left':
-            {
                 coords.x = 0;
                 coords.y = 0;
                 break;
-            }
 
             case 'top-center':
-            {
                 coords.x = getMiddleX();
                 coords.y = 0;
                 break;
-            }
 
             case 'top-right':
-            {
                 coords.x = getRightX();
                 coords.y = 0;
                 break;
-            }
 
             case 'middle-left':
-            {
                 coords.x = 0;
                 coords.y = getMiddleY();
                 break;
-            }
 
             case 'middle-center':
-            {
                 coords.x = getMiddleX();
                 coords.y = getMiddleY();
                 break;
-            }
 
             case 'middle-right':
-            {
                 coords.x = getRightX();
                 coords.y = getMiddleY();
                 break;
-            }
 
             case 'bottom-left':
-            {
                 coords.x = 0;
                 coords.y = getBottomY();
                 break;
-            }
 
             case 'bottom-center':
-            {
                 coords.x = getMiddleX();
                 coords.y = getBottomY();
                 break;
-            }
 
             case 'bottom-right':
-            {
                 coords.x = getRightX();
                 coords.y = getBottomY();
                 break;
-            }
 
             default:
-            {
                 coords.x = 0;
                 coords.y = 0;
-            }
         }
 
         watermark.setPosition(coords);
