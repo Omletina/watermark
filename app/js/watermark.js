@@ -3,17 +3,18 @@ var watermark = function () {
     var coords      = [];
     var mode        = 'single';
     var wm_class    = 'watermark';
-    var wm_src     = '';
+    var wm_src      = '';
 
 
     /*
-    * @params
-    * src: путь до картинки
-    * mode: режит - multy- замостить, single - одиночная вотермарка
-    * */
+     * @params
+     * src: РїСѓС‚СЊ РґРѕ РєР°СЂС‚РёРЅРєРё
+     * mode: СЂРµР¶РёС‚ - multy- Р·Р°РјРѕСЃС‚РёС‚СЊ, single - РѕРґРёРЅРѕС‡РЅР°СЏ РІРѕС‚РµСЂРјР°СЂРєР°
+     * */
     var init = function (src, mode) {
         wm_src = src;
-        _clear()
+        _clear();
+
 
         if(mode == 'multy'){
             _initMultyMode();
@@ -22,7 +23,9 @@ var watermark = function () {
         }
 
     };
-    
+
+
+
     var _stop = function( event, ui ) {
 
         var pos = ui.position;
@@ -36,18 +39,20 @@ var watermark = function () {
     }
 
     var _clear = function(){
+        coords.x = 0;
+        coords.y = 0;
         $('.'+wm_class).remove();
     }
 
     /*
-    * Устанавливает расстояние у вотермарок по горизонтале
-    * */
+     * РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ СЂР°СЃСЃС‚РѕСЏРЅРёРµ Сѓ РІРѕС‚РµСЂРјР°СЂРѕРє РїРѕ РіРѕСЂРёР·РѕРЅС‚Р°Р»Рµ
+     * */
     var setRightMargin = function(val){
         $('.'+wm_class+' img').css({'margin-right':val+'px'});
     }
 
     /*
-     * Устанавливает расстояние у вотермарок по вертикали
+     * РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ СЂР°СЃСЃС‚РѕСЏРЅРёРµ Сѓ РІРѕС‚РµСЂРјР°СЂРѕРє РїРѕ РІРµСЂС‚РёРєР°Р»Рё
      * */
     var setBottomMargin = function(val){
         $('.'+wm_class+' img').css({'margin-bottom':val+'px'});
@@ -60,8 +65,9 @@ var watermark = function () {
         $draggable_elem.append($img);
 
         $draggable_elem.appendTo('.aim-img');
+
         $draggable_elem.draggable({
-            containment: "parent",
+            /*containment: "parent",*/
             stop: _stop
         });
     }
@@ -82,26 +88,42 @@ var watermark = function () {
     }
 
     var _getDraggableElem = function(add_class){
-       return $('<div class="'+wm_class+' '+add_class+'"></div>');
+        return $('<div class="'+wm_class+' '+add_class+'"></div>');
     }
 
     var _getWmImg = function(){
-        return $('<img src="'+wm_src+'">');
+        return $('<img class="wm_image" src="'+wm_src+'">');
+    }
+
+    var getSize = function(){
+        var $img = $('.'+wm_class+' img:first-child');
+        
+        return {
+            w: $img[0].width,
+            h: $img[0].height
+        };
+
+    }
+
+    var setPosition = function(coords){
+
+        var $img = $('.'+wm_class+' img:first-child');
+
+        $img.css({'left': coords.x, 'top': coords.y, 'position': 'absolute'});
+
     }
 
     return {
-        init: init,
-        setRightMargin: setRightMargin,
-        setBottomMargin: setBottomMargin,
-        getCoords: getCoords
+        init:               init,
+        setRightMargin:     setRightMargin,
+        setBottomMargin:    setBottomMargin,
+        getCoords:          getCoords,
+        getSize:            getSize,
+        setPosition:        setPosition
     };
 }();
 
 
-watermark.init('/img/watermark.jpg', 'multy');
-//watermark.init('/img/watermark.jpg');
-watermark.setRightMargin(25);
-watermark.setBottomMargin(15);
 
 
 

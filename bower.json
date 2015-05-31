@@ -4,6 +4,7 @@
     "jquery": "1.11",
     "modernizr": "~2.8.3",
     "normalize.css": "~3.0.3",
-    "jquery-ui": "~1.11.4"
+    "jquery-ui": "~1.11.4",
+    "jquery-file-upload": "~9.10.0"
   }
 }
