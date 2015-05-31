@@ -45,6 +45,12 @@ $(function () {
         $(input).val( filename ); // Set the value
     });
 
+
+
+    
+    
+
+
     //Меняем размеры дивов которые визуализируют отступы между водяными знаками в режиме "Замостить"
     marginLeft.on( "spin", function( event, ui ) {
 
@@ -183,6 +189,74 @@ $(function () {
     function getAimImgH(){
         return $('.aim-img img').height();
     }
+
+    var IMG_SRC = 'upload/images/files/';
+    var MAX_FILE_SIZE = 2000000;
+    $wm = $('.aim-img');
+
+    
+
+    function UploadImg(id) {
+
+        var $input =  $("input[data-download-file= '" + id +"' ]");    
+
+        $input.fileupload({
+            url: 'upload/images/index.php',
+            dataType: 'json',
+            add: function(e, data) {
+                var errorsText = '';
+                var acceptFileTypes = /^image\/(gif|jpe?g|png)$/i;
+
+                    data.submit();
+                
+            },
+            done: function(e, data) {
+
+                $.each(data.result.files, function(index, file) {
+                    addImg(file.name, id);
+                    
+                });
+            },
+            
+            fail: function (e, data) {
+            }
+        });
+    };
+
+    function addImg(fileName, container) {
+        var src = IMG_SRC + fileName;
+        console.log(src);
+        console.log(container)
+     
+    };
+
+    function DownloadImg() {
+        if(!checkUploadImg()) return false;
+        var $form = $(this);
+        var data = $form.serialize();
+        $.ajax({
+            url: 'create-img.php',
+            type: 'POST',
+            dataType: 'html',
+            data: data,
+            beforeSend: function(){
+                $('.preloader').show();
+            },
+            success: function(response) {
+                var response = getObj(response);
+                downloadResImg(response);
+                $('.preloader').hide();
+            },
+            error: function(response) {
+            }
+        });
+        return false;
+    };
+
+
+UploadImg('#image');
+UploadImg('#watermark');
+
 
     $('.form').on('submit', function(e){
 
