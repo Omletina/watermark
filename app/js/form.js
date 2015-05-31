@@ -1,3 +1,5 @@
+"use strict";
+
 $(function () {
 
     //Включаем UI объекты определяющие положение и прозрачность водянного(ых) знака
@@ -20,9 +22,9 @@ $(function () {
 
     //Переключение между режимами отображения водяного знака (один или мульти)
     $(".placement-select__item").on("click", function () {
-        var id = $(this).data('select-placement');
+        var $this = $(this),
+            id = $this.data('select-placement');
 
-        $this = $(this);
         $(id).addClass('active').siblings('.position-select').removeClass('active');
         $this.addClass('active').siblings('.placement-select__item').removeClass('active');
 
