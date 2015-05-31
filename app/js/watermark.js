@@ -4,7 +4,7 @@ var watermark = function () {
     var mode = 'single';
     var wm_class = 'watermark';
     var wm_src = '';
-
+    var $draggable_elem;
 
     /*
      * @params
@@ -21,7 +21,7 @@ var watermark = function () {
         } else {
             _initSingleMode();
         }
-
+        return $draggable_elem;
     };
 
 
@@ -59,7 +59,7 @@ var watermark = function () {
 
     var _initSingleMode = function () {
 
-        var $draggable_elem = _getDraggableElem();
+        $draggable_elem = _getDraggableElem();
         var $img = _getWmImg();
         $draggable_elem.append($img);
 
@@ -73,7 +73,7 @@ var watermark = function () {
 
     var _initMultyMode = function () {
 
-        var $draggable_elem = _getDraggableElem('multy');
+        $draggable_elem = _getDraggableElem('multy');
         var $img = _getWmImg();
 
         for (i = 0; i < 1000; i++) {

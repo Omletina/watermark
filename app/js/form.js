@@ -1,7 +1,8 @@
 $(function () {
 
     //Включаем UI объекты определяющие положение и прозрачность водянного(ых) знака
-    var moveX = $("#moveX").spinner(),
+    var $draggable_elem,
+        moveX = $("#moveX").spinner(),
         moveY = $("#moveY").spinner(),
         marginRight = $("#margin-right").spinner({
             min: 0
@@ -34,13 +35,22 @@ $(function () {
             //Используем сохраненное значение в случае переключения между режимами мульти и сингл
             watermark.setRightMargin(marginRight.val());
             watermark.setBottomMargin(marginBottom.val());
+            refreshOpacity();
 
         }else{
-            watermark.init(imgFile);
+            $draggable_elem = watermark.init(imgFile);
+
+            //Отображаем координаты при их изменении способом Драг энд Дроп
+            $draggable_elem.on( "drag", function( event, ui ) {
+                moveX.val(ui.position.left);
+                moveY.val(ui.position.top);
+            } );
+
             $('input[name=mode]').val('single');
 
             //Используем сохраненное значение в случае переключения между режимами мульти и сингл
             watermark.setPosition({x: moveX.val(), y: moveY.val()});
+            refreshOpacity();
 
         }
 
@@ -64,6 +74,7 @@ $(function () {
         watermark.setPosition({y: ui.value});
     });
 
+
     //Меняем размеры дивов которые визуализируют отступы между водяными знаками в режиме "Замостить"
     marginRight.on( "spin", function( event, ui ) {
 
@@ -75,8 +86,6 @@ $(function () {
         });
 
         watermark.setRightMargin(marginRightVal);
-
-        $('input[name=x_margin]').val(marginRightVal);
     } );
     marginBottom.on( "spin", function( event, ui ) {
 
@@ -88,8 +97,6 @@ $(function () {
         });
 
         watermark.setBottomMargin(marginBottomVal);
-
-        $('input[name=y_margin]').val(marginBottomVal);
     } );
 
     function refreshOpacity(){
@@ -215,17 +222,17 @@ $(function () {
 
     $('.form').on('submit', function(e){
 
-        if(watermark){
-            var coords = watermark.getCoords();
-            $('input[name=x]').val(coords.x);
-            $('input[name=y]').val(coords.y);
-        }
+        //if(watermark){
+        //    var coords = watermark.getCoords();
+        //    $('input[name=x]').val(coords.x);
+        //    $('input[name=y]').val(coords.y);
+        //}
 
         // для отладки - можно потом удалить
-        console.log('x: '       +$('input[name=x]').val());
-        console.log('y: '       +$('input[name=y]').val());
-        console.log('x_margin: '+$('input[name=x_margin]').val());
-        console.log('y_margin: '+$('input[name=y_margin]').val());
+        console.log('x: '       +$('input[name=value_x]').val());
+        console.log('y: '       +$('input[name=value_y]').val());
+        console.log('right_margin: '+$('input[name=value_right]').val());
+        console.log('bottom_margin: '+$('input[name=value_bottom]').val());
         console.log('opacity: ' +$('input[name=opacity]').val());
         console.log('mode: '    +$('input[name=mode]').val());
 

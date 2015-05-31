@@ -23,10 +23,10 @@ block content
             .controls-bl
                 .controls-title Настройки
                 form.form
-                    input(type="hidden", name="x")
-                    input(type="hidden", name="y")
-                    input(type="hidden", name="x_margin")
-                    input(type="hidden", name="y_margin")
+                    //input(type="hidden", name="x")
+                    //input(type="hidden", name="y")
+                    //input(type="hidden", name="x_margin")
+                    //input(type="hidden", name="y_margin")
                     input(type="hidden", name="opacity")
                     input(type="hidden", name="mode")
                     //- Блок загрузки изображений
@@ -65,10 +65,10 @@ block content
                             .position-select__count.count-position
                                 .input-group_count
                                     label.input-group__label_count(for="moveX") X
-                                    input.count-position__item.count-position__item_x(id="moveX", name="value", value="0")
+                                    input.count-position__item.count-position__item_x(id="moveX", name="value_x", value="0")
                                 .input-group_count
                                     label.input-group__label_count(for="moveY") Y
-                                    input.count-position__item.count-position__item_y(id="moveY", name="value", value="0")
+                                    input.count-position__item.count-position__item_y(id="moveY", name="value_y", value="0")
                         .position-select.position-select_multi(id="chooseMulti")
                             .position-select__choose.choose-position
                                 .choose-position__margin.choose-position__margin_right
@@ -86,14 +86,14 @@ block content
                             .position-select__count.count-position
                                 .input-group_count
                                     label.input-group__label_count(for="margin-right") X
-                                    input.count-position__item.count-position__item_x(id="margin-right", name="value", value="0")
+                                    input.count-position__item.count-position__item_x(id="margin-right", name="value_right", value="0")
                                 .input-group_count
                                     label.input-group__label_count(for="margin-bottom") Y
-                                    input.count-position__item.count-position__item_y(id="margin-bottom", name="value", value="0")
+                                    input.count-position__item.count-position__item_y(id="margin-bottom", name="value_bottom", value="0")
                     .separator
                     //- Блок прозрачности
                     .form__group
-                        label.input-group__label(for="opacity") Прозрачность
+                        label.input-group__label Прозрачность
                         .input-group__slider(id="opacity")
                     .separator
                     //- Блок кнопок
