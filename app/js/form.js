@@ -1,7 +1,7 @@
 "use strict";
 
 $(function () {
-
+    var imgFile = '';
     //Включаем UI объекты определяющие положение и прозрачность водянного(ых) знака
     var $draggable_elem,
         moveX = $("#moveX").spinner(),
@@ -28,7 +28,7 @@ $(function () {
         $(id).addClass('active').siblings('.position-select').removeClass('active');
         $this.addClass('active').siblings('.placement-select__item').removeClass('active');
 
-        var imgFile = '/img/watermark.jpg'; // todo - это значение надо инизиализировать при загрузке изображения
+        // var imgFile = '/img/watermark.jpg'; // todo - это значение надо инизиализировать при загрузке изображения
 
         if ($this.hasClass('placement-select__item_multi')) {
             watermark.init(imgFile, 'multy');
@@ -215,7 +215,8 @@ $(function () {
 
     function UploadImg(id) {
 
-        var $input = $("input[data-download-file= '" + id + "' ]");
+        var $input = $("input[data-file-name-input='"+id+"' ]");
+        console.log($input);
 
         $input.fileupload({
             url: 'upload/images/index.php',
@@ -241,9 +242,13 @@ $(function () {
     }
 
     function addImg(fileName, container) {
-        var src = IMG_SRC + fileName;
-        console.log(src);
-        console.log(container)
+        var src = IMG_SRC + fileName;        
+            if (container === '#image') {
+                $wm.children().attr("src", src);    
+            }else{
+               imgFile = src;
+               watermark.init(imgFile, 'single'); 
+            }
 
     }
 
