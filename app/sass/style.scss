@@ -257,3 +257,59 @@ textarea {
         background-position: -61px 94px
     }
 }
+
+
+
+.main-title { 
+    opacity:0;
+}
+.lang__link { 
+    text-decoration:none; 
+    color:#8e9298;
+}
+.lang__link:hover { 
+    color:#444a53;
+}
+.soc-web { 
+    left:-44px;
+}
+.soc-like { 
+    position:absolute; 
+    top:0; 
+    left:44px; 
+    width:43px; 
+    height:41px; 
+    background-image:url(../img/finger-icon.png); 
+    background-repeat:no-repeat; 
+    background-position:50% 50%; 
+    background-color:rgba(255,255,255,.7); 
+    cursor:pointer; 
+}
+.soc-web:hover { 
+    left:0;
+}
+
+.soc-icons-fb , 
+.soc-icons-tw, 
+.soc-icons-vk { 
+    cursor:pointer;
+}
+.soc-icons-fb a,
+.soc-icons-tw a,
+.soc-icons-vk a { 
+    text-indent: -999px; 
+    display: block; 
+    height: 41px;
+}
+
+.watermark-work { 
+    background-repeat:repeat; 
+    background-position:0 0; 
+    background-color:#fff; 
+}
+.watermark-work[data-bg="watermark-work-rus"] { 
+    background-image:url(../img/watermark-work-bg.png); 
+}
+.watermark-work[data-bg="watermark-work-eng"] {
+    background-image:url(../img/watermark-work-bg-eng.png); 
+}

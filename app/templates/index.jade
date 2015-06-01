@@ -5,15 +5,20 @@ block title
 
 block content
     .wrapper
-        .lang-buttons
-            .lang-block РУС
-            .lang-block ENG
-        .soc-web
+        .lang-buttons.language.easing
+            .lang-block.language__rus
+                a.lang__link.lang__link__rus(href="javascript://") РУС
+            .lang-block.language__eng
+                a.lang__link.lang__link__eng(href="javascript://") ENG
+        .soc-web.easing
             .soc-like
             .soc-icons
                 .soc-icons-fb
+                    a#fb(href="javascript://") Facebook
                 .soc-icons-tw
+                    a#twitter(href="javascript://") Twitter
                 .soc-icons-vk
+                    a#vk(href="javascript://") VKontakte
         .container.cl
             .main-bl
                 .main-title Генератор водяных знаков
@@ -31,13 +36,13 @@ block content
                     input(type="hidden", name="mode")
                     //- Блок загрузки изображений
                     .form__group
-                        label.form__label Исходное изображение
+                        label.form__label.original-image Исходное изображение
                         .form__input.input-group
                             input.input-group__input(placeholder="image.jpg", id="image", disabled)
                             .input-group__icon
                                 input.input-group__file-load(type="file", data-file-name-input="#image")
                     .form__group
-                        label.form__label Водяной знак
+                        label.form__label.watermark-image Водяной знак
                         .form__input.input-group
                             input.input-group__input(placeholder="image.png", id="watermark", disabled)
                             .input-group__icon
@@ -46,7 +51,7 @@ block content
                     //- Блок настройки положения
                     .form__group
                         .placement
-                            label.form__label Положение
+                            label.form__label.place-title Положение
                             .placement-select
                                 .placement-select__item.placement-select__item_single.active(data-select-placement="#chooseSingle")
                                 .placement-select__item.placement-select__item_multi(data-select-placement="#chooseMulti")
@@ -93,7 +98,7 @@ block content
                     .separator
                     //- Блок прозрачности
                     .form__group
-                        label.input-group__label Прозрачность
+                        label.input-group__label.transparency-title Прозрачность
                         .input-group__slider(id="opacity")
                     .separator
                     //- Блок кнопок
