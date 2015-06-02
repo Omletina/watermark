@@ -259,6 +259,7 @@ $(function () {
 
 
     UploadImg('#image');
+
     UploadImg('#watermark');
 
     //Отправка формы
@@ -283,7 +284,7 @@ $(function () {
             },
             success: function (response){
 
-                document.location.href='/download.php?file=/'+response.res;
+                document.location.href='/download.php';
 
             },
             error: function (response) {

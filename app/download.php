@@ -1,7 +1,6 @@
 <?php
 
-$filename = '';
-if (isset($_GET['file'])) $filename = $_SERVER['DOCUMENT_ROOT'].$_GET['file'];
+$filename = $_SERVER['DOCUMENT_ROOT'].'/upload/images/files/result.png';
 
 if (file_exists($filename)) {
         header("Content-type: application/x-download");
