@@ -1,17 +1,18 @@
 <?php
+
 //Входные параметры
-$img_path = "upload/files/";
-$name_main_img = $_POST['name-version-main'];
-$name_watermark = $_POST['name-version-watermark'];
-$x = $_POST['x'];
-$y = $_POST['y'];
-$opacity = $_POST['opacity'] * 100;
-$mode = $_POST['mode']; // tile, untile
-$x_margin = $_POST['x-margin'];
-$y_margin = $_POST['y-margin'];
-$img_main = ImgToPng($img_path.$name_main_img, "main-img.png");
-$img_watermark = ImgToPng($img_path.$name_watermark, "watermark.png");
-$name_result_img = "result.png";
+$img_path           = "upload/images/files/";
+$name_main_img      = $_POST['aim-img'];
+$name_watermark     = $_POST['watermark'];
+$x                  = $_POST['value_x'];
+$y                  = $_POST['value_y'];
+$opacity            = $_POST['opacity'] * 100;
+$mode               = $_POST['mode']; // tile, untile
+$x_margin           = $_POST['value_right'];
+$y_margin           = $_POST['value_bottom'];
+$img_main           = ImgToPng($name_main_img, $img_path."tmp/main-img.png");
+$img_watermark      = ImgToPng($name_watermark, $img_path."tmp/watermark.png");
+$name_result_img    = $img_path."result.png";
 
 // Конвертация изображений в png
 function ImgToPng($img, $destName) {
@@ -93,12 +94,12 @@ function imagecopymerge_alpha($dst_im, $src_im, $dst_x, $dst_y, $pct, $x_margin,
     $row_num = ceil($dst_im_height / $row_height);
     $col_num = ceil($dst_im_width / $col_width);
 
-    if($mode === 'tile') {
+    if($mode === 'multy') {
         for($r = 0; $r <= $row_num; $r++) {
             $y_tile = $row_height * $r;
             for($c = 0; $c <= $col_num; $c++) {
                 $x_tile = $col_width * $c;
-                imagecopy($dst_im, $src_im, $x_tile, $y_tile, 0, 0, $w, $h);
+                imagecopy($dst_im, $src_im, $x_tile+$dst_x, $y_tile+$dst_y, 0, 0, $w, $h);
             }
         }
     }else{
@@ -110,8 +111,9 @@ function imagecopymerge_alpha($dst_im, $src_im, $dst_x, $dst_y, $pct, $x_margin,
 // SAME COMMANDS:
 imagecopymerge_alpha($img_main, $img_watermark, $x, $y, $opacity, $x_margin, $y_margin, $mode, $name_result_img);
 
+
 $data = array();
-$data['src-res'] = $name_result_img;
+$data['res'] = $name_result_img;
 
 echo json_encode($data);
 

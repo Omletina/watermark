@@ -216,11 +216,15 @@ $(function () {
     function UploadImg(id) {
 
         var $input = $("input[data-file-name-input='"+id+"' ]");
-        console.log($input);
 
         $input.fileupload({
             url: 'upload/images/index.php',
             dataType: 'json',
+            //disableImageResize: /Android(?!.*Chrome)|Opera/.test(window.navigator && navigator.userAgent),
+            disableImageResize: false,
+            imageMaxWidth: 200,
+            imageMaxHeight: 205,
+            imageCrop: true,
             add: function (e, data) {
                 var errorsText = '';
                 var acceptFileTypes = /^image\/(gif|jpe?g|png)$/i;
@@ -229,9 +233,8 @@ $(function () {
 
             },
             done: function (e, data) {
-
                 $.each(data.result.files, function (index, file) {
-                    addImg(file.name, id);
+                    addImg('resized/'+file.name, id);
 
                 });
             },
@@ -244,7 +247,9 @@ $(function () {
     function addImg(fileName, container) {
         var src = IMG_SRC + fileName;        
             if (container === '#image') {
-                $wm.children().attr("src", src);    
+                $('.aim-img>img').remove();
+                $wm.append('<img src="'+src+'">');
+
             }else{
                imgFile = src;
                watermark.init(imgFile, 'single'); 
@@ -252,52 +257,52 @@ $(function () {
 
     }
 
-    function DownloadImg() {
-        if (!checkUploadImg()) {
-            return;
-        }
-        var $form = $(this);
-        var data = $form.serialize();
-        $.ajax({
-            url: 'create-img.php',
-            type: 'POST',
-            dataType: 'html',
-            data: data,
-            beforeSend: function () {
-                $('.preloader').show();
-            },
-            success: function (response) {
-                downloadResImg(getObj(response));
-                $('.preloader').hide();
-            },
-            error: function (response) {
-            }
-        });
-    }
-
 
     UploadImg('#image');
-    UploadImg('#watermark');
 
+    UploadImg('#watermark');
 
     //Отправка формы
 
     $('.form').on('submit', function (e) {
+        e.preventDefault(e);
 
-        //if(watermark){
-        //    var coords = watermark.getCoords();
-        //    $('input[name=x]').val(coords.x);
-        //    $('input[name=y]').val(coords.y);
-        //}
+        if (!checkUploadImg()) return false;
 
-        // для отладки - можно потом удалить
-        console.log('x: ' + $('input[name=value_x]').val());
-        console.log('y: ' + $('input[name=value_y]').val());
-        console.log('right_margin: ' + $('input[name=value_right]').val());
-        console.log('bottom_margin: ' + $('input[name=value_bottom]').val());
-        console.log('opacity: ' + $('input[name=opacity]').val());
-        console.log('mode: ' + $('input[name=mode]').val());
+        $('input[name=aim-img]').val($('.aim-img>img').attr('src'));
+        $('input[name=watermark]').val($('.wm_image').attr('src'));
+
+        var data    = $(this).serialize();
+        
+        $.ajax({
+            url: 'merge.php',
+            type: 'POST',
+            dataType: 'json',
+            data: data,
+            beforeSend: function () {
+
+            },
+            success: function (response){
+
+                document.location.href='/download.php';
+
+            },
+            error: function (response) {
+
+            }
+        });
+        
+        e.preventDefault(e);
+
 
         e.preventDefault(e);
     });
+
+
+
+    function checkUploadImg(){
+        if(!$('.aim-img img').length) return false;
+        if(!watermark.is_inited) return false;
+        return true;
+    }
 });
