@@ -5,7 +5,8 @@ var watermark = function () {
     var wm_class = 'watermark';
     var wm_src = '';
     var $draggable_elem;
-
+    var is_inited = false;
+ 
     /*
      * @params
      * src: путь до картинки
@@ -21,9 +22,11 @@ var watermark = function () {
         } else {
             _initSingleMode();
         }
+
+        this.is_inited = true;
+
         return $draggable_elem;
     };
-
 
     var _stop = function (event, ui) {
 
@@ -31,6 +34,9 @@ var watermark = function () {
 
         coords.x = pos.left;
         coords.y = pos.top;
+
+        $('input[name=value_x]').val(coords.x);
+        $('input[name=value_y]').val(coords.y);
     };
 
     var getCoords = function () {
@@ -123,6 +129,7 @@ var watermark = function () {
     };
 
     return {
+        is_inited: is_inited,
         init: init,
         setRightMargin: setRightMargin,
         setBottomMargin: setBottomMargin,

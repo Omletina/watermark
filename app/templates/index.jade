@@ -24,15 +24,13 @@ block content
                 .main-title Генератор водяных знаков
                 .watermark-work
                     .aim-img
-                        img(src="../img/aim-img.jpg")
+
             .controls-bl
                 .controls-title Настройки
                 form.form
-                    //input(type="hidden", name="x")
-                    //input(type="hidden", name="y")
-                    //input(type="hidden", name="x_margin")
-                    //input(type="hidden", name="y_margin")
-                    input(type="hidden", name="opacity")
+                    input(type="hidden", name="aim-img")
+                    input(type="hidden", name="watermark")
+                    input(type="hidden", name="opacity" value="1")
                     input(type="hidden", name="mode")
                     //- Блок загрузки изображений
                     .form__group

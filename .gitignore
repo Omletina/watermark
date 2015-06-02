@@ -5,3 +5,4 @@ dist
 app/css/bundle.css
 app/index.html
 .DS_Store
+app/upload/images/files

@@ -134,7 +134,7 @@ class UploadHandler
                     'max_height' => 600
                 ),
                 */
-                'thumbnail' => array(
+                'resized' => array(
                     // Uncomment the following to use a defined directory for the thumbnails
                     // instead of a subdirectory based on the version identifier.
                     // Make sure that this directory doesn't allow execution of files if you
@@ -145,8 +145,8 @@ class UploadHandler
                     // Uncomment the following to force the max
                     // dimensions and e.g. create square thumbnails:
                     //'crop' => true,
-                    'max_width' => 80,
-                    'max_height' => 80
+                    'max_width' => 650,
+                    'max_height' => 535
                 )
             ),
             'print_response' => true
@@ -993,6 +993,7 @@ class UploadHandler
     }
 
     protected function create_scaled_image($file_name, $version, $options) {
+
         if ($this->options['image_library'] === 2) {
             return $this->imagemagick_create_scaled_image($file_name, $version, $options);
         }
