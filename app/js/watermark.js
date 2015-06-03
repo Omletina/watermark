@@ -72,7 +72,7 @@ var watermark = function () {
         $draggable_elem.appendTo('.aim-img');
 
         $draggable_elem.draggable({
-            /*containment: "parent",*/
+            containment: "parent",
             stop: _stop
         });
     };

@@ -10,8 +10,8 @@ var languageModule = (function() {
 				eng: "Watermark generator"
 			},
 			'.footer-copi': {
-				rus: "© 2014, Это мой сайт, пожалуйста, не копируйте и не воруйте его",
-				eng: "© 2014 This is my website, please do not copy or steal it"
+				rus: "© 2015, Это мой сайт, пожалуйста, не копируйте и не воруйте его",
+				eng: "© 2015 This is my website, please do not copy or steal it"
 			},
 			'.controls-title': {
 				rus: "Настройки",
